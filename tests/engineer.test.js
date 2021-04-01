@@ -1,0 +1,7 @@
+describe("engineer")
+it("should prompt user for info about the engineer")
+it("should prompt the user for engineer's full name")
+it("should prompt the user for engineer's ID mumber")
+it("should prompt user for employee's email")
+it("should prompt the user for the engineer's GitHub username")
+it("should prompt the user to select engineer or intern or to finish building the team profile")
