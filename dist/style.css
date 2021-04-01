@@ -1,0 +1,30 @@
+:root {
+    --gradientGrey:rgb(75, 69, 85);
+    --gradientPurple:rgb(68, 42, 185);
+    --gradientBlue:rgb(90, 158, 214);
+}
+
+body {
+  font-family: monospace;
+}
+
+.grad {
+  background-image: linear-gradient(
+    var(--gradientGrey),
+    var(--gradientPurple),
+    var(--gradientBlue)
+  );
+}
+
+h1 {
+  color: lightgray;
+  background-image: linear-gradient(
+    var(--gradientBlue),
+    var(--gradientGrey),
+    var(--gradientPurple)
+  );
+}
+
+h5 {
+  font-weight: bold;
+}
