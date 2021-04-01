@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: monospace;
+  font-family: 'Laila', sans-serif;;
+  background-color: rgb(240, 236, 231);
 }
 
 .grad {
