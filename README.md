@@ -4,7 +4,7 @@
 This application generates a team profile html file using the command-line terminal. The user inputs the information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
 
 ## Table of Contents
-- [AcceptanceCriteria](#acceptancecriteria)
+- [Acceptance Criteria](#acceptancecriteria)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
@@ -38,7 +38,7 @@ This application generates a team profile html file using the command-line termi
 ## Credits
 This application was built using [NodeJS](https://nodejs.org/en/) and utilized the [Inquirer package](https://www.npmjs.com/package/inquirer) and the [Jest package](https://www.npmjs.com/package/jest). The generated HTML file was drafted using dynamic HTML and CSS and utilized the CSS framework [Bootstrap](https://getbootstrap.com/).
 
-## Testing
+## Tests
 **insert testing info here**
 
 ## Questions
