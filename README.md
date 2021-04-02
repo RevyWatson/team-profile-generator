@@ -4,7 +4,7 @@
 This application generates a team profile html file using the command-line terminal. The user inputs the information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
 
 ## Table of Contents
-- [Acceptance Criteria](#acceptancecriteria)
+- [Acceptance Criteria](#acceptance-criteria)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Credits](#credits)
@@ -25,7 +25,7 @@ This application generates a team profile html file using the command-line termi
 
 ## Installation
 1. Open the command terminal on your machine.
-2. Navigate through your file system to the location of the “index.js” file
+2. Navigate through your file system to the location of the “index.js” file.
 3. Within the same file, create a .gitignore.txt file to ignore the node modules.
 4. Install the Inquirer package by typing “npm install inquirer”.
 5. Install the Jest package by typing “npm install jest”.
@@ -36,7 +36,7 @@ This application generates a team profile html file using the command-line termi
 **insert screenshots and video link here**
 
 ## Credits
-This application was built using [NodeJS](https://nodejs.org/en/) and utilized the [Inquirer package](https://www.npmjs.com/package/inquirer) and the [Jest package](https://www.npmjs.com/package/jest). The generated HTML file was drafted using dynamic HTML and CSS and utilized the CSS framework [Bootstrap](https://getbootstrap.com/).
+This application was built using [NodeJS](https://nodejs.org/en/) and utilized the [Inquirer package](https://www.npmjs.com/package/inquirer) and the [Jest package](https://www.npmjs.com/package/jest). The template for the generated HTML file was drafted using dynamic HTML and CSS and utilized the CSS framework [Bootstrap](https://getbootstrap.com/).
 
 ## Tests
 **insert testing info here**
