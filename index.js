@@ -2,49 +2,18 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 //linked dist for this application
+const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 const rendereredHTML = require("./dist/renderedHTML");
-
-//first prompt for user input. data will sent to the HTML title and header title
-inquirer.prompt([
-    {
-        type: "input",
-        message: "What is the team's name?",
-        name: "teamName",
-        default: "My Team",
-    },
-])
+const generateHTML = require("./dist/renderedHTML");
 
 
-mainMenu();
+const myTeam = [];
 
-//main menu for team member selection
-function mainMenu() {
+createManager()
 
-    inquirer.prompt([
-        {
-            type: "list",
-            message: "Please select a job title for team member.",
-            name: "jobTitle",
-            choices: ["Manager", "Engineer", "Intern", "Finished building my team."],
-            default: "Manager",
-        },
-    ])
-
-        .then(input) = function () {
-            if (input.jobTitle === "Manager") {
-                managerQuestions();
-            } else if (input.jobTitle === "Engineer") {
-                engineerQuestions();
-            } else if (input.jobTitle === "Intern") {
-                internQuestions();
-            } else {
-                console.log("The information has been successfully saved!");
-            }
-        }
-};
-
-function managerQuestions() {
-
+function createManager() {
     inquirer.prompt([
         {
             type: "input",
@@ -54,7 +23,7 @@ function managerQuestions() {
         {
             type: "input",
             message: "What is the manager's ID number?",
-            name: "idNum",
+            name: "id",
         },
         {
             type: "input",
@@ -64,25 +33,41 @@ function managerQuestions() {
         {
             type: "input",
             message: "What is the office number associated with this team?",
-            name: "officeNum",
-        },
-        {
-            type: "confirm",
-            message: "Would you like to add another team member?",
-            name: "addNew",
+            name: "officeNumber",
         },
     ])
 
-        .then(input) = function () {
-            if (input.addNew) {
-                mainMenu();
-            } else {
-                console.log("The information has been successfully saved!");
-            }
-        }
+        .then(input => {
+            const manager = new Manager(input.fullName, input.id, input.email, input.officeNumber);
+            myTeam.push(manager);
+            console.log("Huzzah! This team member's profile information was saved!");
+            addMember()
+        })
 }
 
-function engineerQuestions() {
+function addMember() {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Select a job title to add a team member.",
+            name: "jobTitle",
+            choices: ["Engineer", "Intern", "Finished building my team."],
+        },
+    ])
+        .then(input => {
+            switch (input.jobTitle) {
+                case "Engineer": createEngineer()
+
+                    break;
+                case "Intern": createIntern()
+
+                    break;
+                default: generateHTML()
+            }
+        })
+}
+
+function createEngineer() {
     inquirer.prompt([
         {
             type: "input",
@@ -92,7 +77,7 @@ function engineerQuestions() {
         {
             type: "input",
             message: "What is the engineer's ID number?",
-            name: "idNum",
+            name: "id",
         },
         {
             type: "input",
@@ -102,26 +87,19 @@ function engineerQuestions() {
         {
             type: "input",
             message: "What is the engineer's GitHub username?",
-            name: "userName",
-        },
-        {
-            type: "confirm",
-            message: "Would you like to add another team member?",
-            name: "addNew",
+            name: "github",
         },
 
     ])
-
-        .then(input) = function () {
-            if (input.addNew) {
-                mainMenu();
-            } else {
-                console.log("The information has been successfully saved!");
-            }
-        }
+        .then(input => {
+            const engineer = new Engineer(input.fullName, input.id, input.email, input.github);
+            myTeam.push(engineer);
+            console.log("Marvelous! This team member's profile information was saved!");
+            addMember()
+        })
 }
 
-function internQuestions() {
+function createIntern() {
     inquirer.prompt([
         {
             type: "input",
@@ -131,7 +109,7 @@ function internQuestions() {
         {
             type: "input",
             message: "What is the intern's ID number?",
-            name: "idNum",
+            name: "id",
         },
         {
             type: "input",
@@ -143,28 +121,21 @@ function internQuestions() {
             message: "What is the name of the school that the intern currently attending or recently a graduate of?",
             name: "school",
         },
-        {
-            type: "confirm",
-            message: "Would you like to add another team member?",
-            name: "addNew",
-        },
 
     ])
-
-        .then(input) = function () {
-            if (input.addNew) {
-                mainMenu();
-            } else {
-                console.log("The information has been successfully saved!");
-            }
-        }
+        .then(input => {
+            const intern = new Intern(input.fullName, input.id, input.email, input.school);
+            myTeam.push(intern);
+            console.log("Fantastic! This team member's profile information was saved!");
+            addMember()
+        })
 }
 
 // writes HTML file
-    .then((data) => {
-    const HTMLContent = rendereredHTML(data);
+// .then((data) => {
+// const HTMLContent = rendereredHTML(data);
 
-    fs.writeFile("index.html", HTMLContent, (err) =>
-        err ? console.log(err) : console.log("Excelsior! Your team profile webpage was successfully generated!")
-    );
-});
+// fs.writeFile("index.html", HTMLContent, (err) =>
+// err ? console.log(err) : console.log("Excelsior! Your team profile webpage was successfully generated!")
+//     );
+// });
