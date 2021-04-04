@@ -1,25 +1,43 @@
-describe("employee")
+const Employee = require("../lib/Employee");
 
-it("should prompt the user for the team name", () => {
+test("should set name through the constructor arguement", () => {
+    const testValue = "The Witch of the Wastes";
+    const employee = Employee(testValue, 4, "spellsNhearts@email.com");
+    expect(employee.fullName).toBe(testValue);
+}) 
 
-});
+test("should set id through the constructor arguement", () => {
+    const testValue = 4;
+    const employee = Employee("The Witch of the Wastes", testValue, "spellsNhearts@email.com");
+    expect(employee.id).toBe(testValue);
+}) 
 
-it("should prompt the user for the manager's information first", () => {
-    expect();
-});
+test("should set email through the constructor arguement", () => {
+    const testValue = "spellsNhearts@email.com";
+    const employee = Employee("The Witch of the Wastes", 4, testValue);
+    expect(employee.email).toBe(testValue);
+})
 
-it("should prompt user for info about the engineer when engineer selected", () => {
-    expect();
-});
+test("getName() should return employee name", () => {
+    const testValue = "The Witch of the Wastes";
+    const employee = Employee("The Witch of the Wastes", 4, "spellsNhearts@email.com");
+    expect(employee.getName()).toBe(testValue);
+}) 
 
-it("should prompt user for info about the intern when intern selected", () => {
-    expect();
-});
+test("getId() should return employee id number", () => {
+    const testValue = 4;
+    const employee = Employee("The Witch of the Wastes", 4, "spellsNhearts@email.com");
+    expect(employee.getId()).toBe(testValue);
+}) 
 
-it("should end the application when 'finished building team profile' selected", () => {
-    expect();
-});
+test("getEmail() should return employee name", () => {
+    const testValue = "spellsNhearts@email.com";
+    const employee = Employee("The Witch of the Wastes", 4, "spellsNhearts@email.com");
+    expect(employee.getEmail()).toBe(testValue);
+})
 
-it("should generate an html file that displays a nicely formatted team roster based on user input", () => {
-    expect();
-});
+test("getRole() should return employee job title", () => {
+    const testValue = "Employee";
+    const employee = Employee("The Witch of the Wastes", 4, "spellsNhearts@email.com");
+    expect(employee.getRole()).toBe(testValue);
+})

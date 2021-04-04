@@ -1,29 +1,19 @@
-describe("manager")
+const Manager = require("../lib/Manager");
 
-it("should set the job title to 'manager'", () => {
-    expect();
-});
+test("should set office number through the constructor arguement", () => {
+    const testValue = 12;
+    const manager = new Manager("Babba Yagga", 1, "Yaggs@email.com", testValue);
+    expect(manager.officeNumber).toBe(testValue);
+}) 
 
-it("should prompt the user for manager's full name", () => {
-    expect();
-});
+test("getRole() should return manager job title", () => {
+    const testValue = "Manager";
+    const manager = new Manager("Babba Yagga", 1, "Yaggs@email.com", 12);
+    expect(manager.getRole()).toBe(testValue);
+}) 
 
-it("should prompt the user for manager's ID mumber", () => {
-    expect();
-});
-
-it("should prompt user for manager's email", () => {
-    expect();
-});
-
-it("should prompt the user for the team's office number", () => {
-    expect();
-});
-
-it("should return to main menu after completing this profile", () => {
-    expect();
-});
-
-it("should prompt the user to select engineer or intern or to finish building the team profile", () => {
-    expect();
-});
+test("getOfficeNumber should return office number", () => {
+    const testValue = 12;
+    const manager = new Manager("Babba Yagga", 1, "Yaggs@email.com", 12);
+    expect(manager.getOfficeNumber()).toBe(testValue);
+})

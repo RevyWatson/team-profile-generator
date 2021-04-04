@@ -1,25 +1,19 @@
-describe("engineer")
+const Engineer = require("../lib/Engineer"); 
 
-it("should set the job title to 'engineer'", () => {
-    expect();
-});
+test("should set github username through the constructor arguement", () => {
+    const testValue = "WickedWitch";
+    const engineer = new Manager("Elphaba", 2, "greengirl@email.com", testValue);
+    expect(engineer.github).toBe(testValue);
+})
 
-it("should prompt the user for engineer's full name", () => {
-    expect();
-});
+test("getRole() should return intern job title", () => {
+    const testValue = "Engineer";
+    const engineer = new Engineer("Elphaba", 2, "greengirl@email.com", "WickedWitch");
+    expect(engineer.getRole()).toBe(testValue);
+}) 
 
-it("should prompt the user for engineer's ID mumber", () => {
-    expect();
-});
-
-it("should prompt user for employee's email", () => {
-    expect();
-});
-
-it("should prompt the user for the engineer's GitHub username", () => {
-    expect();
-});
-
-it("should prompt the user to select engineer or intern or to finish building the team profile", () => {
-    expect();
-});
+test("getGithub() should return Github username", () => {
+    const testValue = "WickedWitch";
+    const engineer = new Engineer("Elphaba", 2, "greengirl@email.com", "WickedWitch");
+    expect(engineer.getGithub()).toBe(testValue);
+})
