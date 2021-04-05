@@ -33,13 +33,14 @@ This application generates a team profile html file using the command-line termi
 7. Answer the questions as you are prompted. Enjoy your generated team profile html file!
 
 ## Usage
-**insert screenshots and video link here**
+Click the link to view the [Team Profile Generator]() in action!
 
 ## Credits
 This application was built using [NodeJS](https://nodejs.org/en/) and utilized the [Inquirer package](https://www.npmjs.com/package/inquirer) and the [Jest package](https://www.npmjs.com/package/jest). The template for the generated HTML file was drafted using dynamic HTML and CSS and utilized the CSS framework [Bootstrap](https://getbootstrap.com/).
 
 ## Tests
 After installing Inquirer and Jest, you can run the tests by typing "npm run test" in the command line terminal.
+Click the link to view the [tests](https://youtu.be/iejxsfpOdTU) in action!
 
 ## Questions
   Have questions or comments about this application?

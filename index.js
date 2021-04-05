@@ -1,15 +1,17 @@
 // packages linked for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-//linked dist for this application
+// team classes linked for this application
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+
+// html templates linked for html generation
 const rendereredHTML = require("./src/renderedHTML");
 
 
 const myTeam = [];
-
+//calls to manager function and prompts manager questions
 createManager()
 
 function createManager() {
@@ -44,7 +46,7 @@ function createManager() {
             addMember()
         })
 }
-
+// add member function prompts user to select from choices
 function addMember() {
     inquirer.prompt([
         {
@@ -66,7 +68,7 @@ function addMember() {
             }
         })
 }
-
+//if user selects Engineer...
 function createEngineer() {
     inquirer.prompt([
         {
@@ -99,7 +101,7 @@ function createEngineer() {
             addMember()
         })
 }
-
+//if user selects Intern...
 function createIntern() {
     inquirer.prompt([
         {
@@ -140,3 +142,5 @@ function generateHTML(input) {
     err ? console.log(err) : console.log("Excelsior! Your team profile webpage was successfully generated!")
         );
     };
+
+    module.exports = generateHTML

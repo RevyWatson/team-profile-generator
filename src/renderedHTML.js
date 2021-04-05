@@ -91,5 +91,3 @@ function generateIntern (intern) {
   </html>
 `;
 }
-
-module.exports = generateHTML;
