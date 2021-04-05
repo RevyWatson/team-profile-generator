@@ -5,8 +5,7 @@ const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const rendereredHTML = require("./dist/renderedHTML");
-const generateHTML = require("./dist/renderedHTML");
+const rendereredHTML = require("./src/renderedHTML");
 
 
 const myTeam = [];
@@ -132,10 +131,9 @@ function createIntern() {
 }
 
 // writes HTML file
-// .then((data) => {
-// const HTMLContent = rendereredHTML(data);
-
-// fs.writeFile("index.html", HTMLContent, (err) =>
-// err ? console.log(err) : console.log("Excelsior! Your team profile webpage was successfully generated!")
-//     );
-// });
+function generateHTML(input) {
+    const HTMLContent = rendereredHTML(input);
+    fs.writeFile("./dist/index.html", HTMLContent, (err) =>
+    err ? console.log(err) : console.log("Excelsior! Your team profile webpage was successfully generated!")
+        );
+    };
