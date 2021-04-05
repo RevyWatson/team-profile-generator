@@ -40,6 +40,7 @@ function createManager() {
             const manager = new Manager(input.fullName, input.id, input.email, input.officeNumber);
             myTeam.push(manager);
             console.log("Huzzah! This team member's profile information was saved!");
+            console.log(manager);
             addMember()
         })
 }
@@ -94,6 +95,7 @@ function createEngineer() {
             const engineer = new Engineer(input.fullName, input.id, input.email, input.github);
             myTeam.push(engineer);
             console.log("Marvelous! This team member's profile information was saved!");
+            console.log(engineer);
             addMember()
         })
 }
@@ -126,6 +128,7 @@ function createIntern() {
             const intern = new Intern(input.fullName, input.id, input.email, input.school);
             myTeam.push(intern);
             console.log("Fantastic! This team member's profile information was saved!");
+            console.log(intern);
             addMember()
         })
 }

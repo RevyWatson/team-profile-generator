@@ -1,53 +1,53 @@
 
-function generateManager(input) {
+function generateManager(manager) {
     return `
     <div class="col-lg-4 col-sm-12 p-3">
     <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
         <div class="card-body border border-2 rounded">
             <div class="grad p-2 mb-2 border border-3 rounded">
-                <h5 class="card-title p-2 text-center text-light">${input.fullName}</h5>
-                <h5 class="card-title p-2 text-center">${input.jobTitle}</h5>
+                <h5 class="card-title p-2 text-center text-light">${manager.fullName}</h5>
+                <h5 class="card-title p-2 text-center">${manager.jobTitle}</h5>
             </div>
-            <p class="card-text">ID: ${input.id}</p>
-            <p class="card-text">Email: <a href="${input.email}"></a></p>
-            <p class="card-text">Office Number: ${input.officeNumber}</p>
+            <p class="card-text">ID: ${manager.id}</p>
+            <p class="card-text">Email: <a href="${manager.email}"></a></p>
+            <p class="card-text">Office Number: ${manager.officeNumber}</p>
         </div>
     </div>
 </div>
     `;
 }
 
-function generateEngineer(input) {
+function generateEngineer(engineer) {
     return `
     <div class="col-lg-4 col-md-6 col-sm-12 p-3">
     <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
         <div class="card-body border border-2 rounded">
             <div class="grad p-2 mb-2 border border-3 rounded">
-                <h5 class="card-title p-2 text-center text-light">${input.fullName}</h5>
-                <h5 class="card-title p-2 text-center">${input.jobTitle}</h5>
+                <h5 class="card-title p-2 text-center text-light">${engineer.fullName}</h5>
+                <h5 class="card-title p-2 text-center">${engineer.jobTitle}</h5>
             </div>
-            <p class="card-text">ID: ${input.id}</p>
-            <p class="card-text">Email: <a href="${input.email}"></a></p>
-            <p class="card-text">GitHub: <a href="https://github.com/${input.userName}"
-                    target="_blank">${input.github}</a></p>
+            <p class="card-text">ID: ${engineer.id}</p>
+            <p class="card-text">Email: <a href="${engineer.email}"></a></p>
+            <p class="card-text">GitHub: <a href="https://github.com/${engineer.userName}"
+                    target="_blank">${engineer.github}</a></p>
         </div>
     </div>
 </div>
     `
 }
 
-function generateIntern (input) {
+function generateIntern (intern) {
     return `
     <div class="col-lg-4 col-md-6 col-sm-12 p-3">
     <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
         <div class="card-body border border-2 rounded">
             <div class="grad p-2 mb-2 border border-3 rounded">
-                <h5 class="card-title p-2 text-center text-light">${input.fullName}</h5>
-                <h5 class="card-title p-2 text-center">${input.jobTitle}</h5>
+                <h5 class="card-title p-2 text-center text-light">${intern.fullName}</h5>
+                <h5 class="card-title p-2 text-center">${intern.jobTitle}</h5>
             </div>
-            <p class="card-text">ID: ${input.id}</p>
-            <p class="card-text">Email: <a href="${input.email}"></a></p>
-            <p class="card-text">School: ${input.school}</p>
+            <p class="card-text">ID: ${intern.id}</p>
+            <p class="card-text">Email: <a href="${intern.email}"></a></p>
+            <p class="card-text">School: ${intern.school}</p>
         </div>
     </div>
 </div>
@@ -55,7 +55,7 @@ function generateIntern (input) {
 };
 
 
- function generateHTML (input) {
+ function generateHTML (myTeam) {
     return `
   <!DOCTYPE html>
   <html lang="en">
