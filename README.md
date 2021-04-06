@@ -40,7 +40,8 @@ This application was built using [NodeJS](https://nodejs.org/en/) and utilized t
 
 ## Tests
 After installing Inquirer and Jest, you can run the tests by typing "npm run test" in the command line terminal.
-Click the link to view the [tests](https://youtu.be/iejxsfpOdTU) in action!
+    
+![Team Profile Generator TESTS](https://user-images.githubusercontent.com/76264693/113642775-9e287880-964e-11eb-8a24-2aa1e4f2ddac.gif)
 
 ## Questions
   Have questions or comments about this application?
