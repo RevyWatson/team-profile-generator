@@ -14,7 +14,7 @@ function generateManager(manager) {
         </div>
     </div>
 </div>
-    `;
+    `
 }
 
 function generateEngineer(engineer) {
@@ -36,7 +36,7 @@ function generateEngineer(engineer) {
     `
 }
 
-function generateIntern (intern) {
+function generateIntern(intern) {
     return `
     <div class="col-lg-4 col-md-6 col-sm-12 p-3">
     <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
@@ -52,10 +52,39 @@ function generateIntern (intern) {
     </div>
 </div>
     `
-};
+}
+
+function generateHTML(input) {
+    let profileArray = [];
+
+    for (let i = 0; i < input.length; i++) {
+        const employee = input[i];
+        const role = employee.getRole();
+
+        if (role === "Manager") {
+            const managerProfile = generateManager(employee);
+            profileArray.push(managerProfile);
+        }
+
+        if (role === "Engineer") {
+            const engineerProfile = generateEngineer(employee);
+            profileArray.push(engineerProfile);
+        }
+
+        if (role === "Intern") {
+            const internProfile = generateIntern(employee);
+            profileArray.push(internProfile);
+        }
+    }
+    const employeeProfiles = profileArray.join("")
+    const generateTeam = generateIndex(employeeProfiles);
+    return generateTeam;
+
+}
 
 
- function generateHTML (myTeam) {
+
+function generateIndex(employeeProfiles) {
     return `
   <!DOCTYPE html>
   <html lang="en">
@@ -83,11 +112,14 @@ function generateIntern (intern) {
       </header>
       <section class="container">
           <div class="row">
-              ${myTeam}
+              ${employeeProfiles}
           </div>
       </section>
   </body>
   
   </html>
-`;
+`
 }
+
+
+module.exports = generateHTML

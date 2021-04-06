@@ -142,5 +142,3 @@ function generateHTML(input) {
     err ? console.log(err) : console.log("Excelsior! Your team profile webpage was successfully generated!")
         );
     };
-
-    module.exports = generateHTML
