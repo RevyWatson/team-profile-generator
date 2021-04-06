@@ -14,7 +14,7 @@ function generateManager(manager) {
         </div>
     </div>
 </div>
-    `
+    `;
 }
 
 function generateEngineer(engineer) {
@@ -33,7 +33,7 @@ function generateEngineer(engineer) {
         </div>
     </div>
 </div>
-    `
+    `;
 }
 
 function generateIntern(intern) {
@@ -51,7 +51,7 @@ function generateIntern(intern) {
         </div>
     </div>
 </div>
-    `
+    `;
 }
 
 function generateHTML(input) {
@@ -118,7 +118,7 @@ function generateIndex(employeeProfiles) {
   </body>
   
   </html>
-`
+`;
 }
 
 
